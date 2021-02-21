@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-run-code-anytime-io"
+    }
+  },
+  "defaultProject": "ng-run-code-anytime-io",
+  "cli": {
+    "analytics": "7594e65b-2cd0-4f27-a730-f468c1008cc9"
+  }
 }
