@@ -46,7 +46,7 @@ export class CodeRunnerComponent implements OnInit {
     console.log(this.codeRequest);
 
     this.service.runCodeOnline(this.codeRequest).subscribe((res: {})=>{
-      console.log(res);
+      //console.log(res);
       //this.paizaResponse = res;
       this.output = res['output'];
     });
