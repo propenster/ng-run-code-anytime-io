@@ -69,7 +69,7 @@ export class RunnerComponent implements OnInit {
       // console.log(this.paizaResponse);
       // this.output = "Why is this not showing..." + this.paizaResponse;
       // console.log(this.output);
-      console.log(res);
+      //console.log(res);
       this.output = JSON.stringify(res, null, 2);
     })
   }
