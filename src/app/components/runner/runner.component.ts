@@ -1,5 +1,5 @@
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { HandlerService } from 'src/app/services/handler.service';
 import { environment } from 'src/environments/environment';
 import { JDoodleModel } from './JDoodleModel';
@@ -22,6 +22,7 @@ export class RunnerComponent implements OnInit {
 
   @Input() code: string = '';
   @Input() language: string = '';
+  @Input() output: string = '';
   codeResult: any = {};
   languages: any = ['Language', 'C', 'C#', 'JAVA', 'Python', 'Python3', 'Javascript', 'php'];
   paizaRequestId: string = '';
@@ -55,6 +56,22 @@ export class RunnerComponent implements OnInit {
       console.log(res);
       this.paizaResponse = res;
     });
+
+
+  }
+
+  convertXmlToJson(){
+    const params = new HttpParams()
+    .set('xml', this.code.trim());
+
+    return this.http.get('https://api.factmaven.com/xml-to-json/?xml='+this.code).subscribe((res: [])=>{
+      // this.paizaResponse = res;
+      // console.log(this.paizaResponse);
+      // this.output = "Why is this not showing..." + this.paizaResponse;
+      // console.log(this.output);
+      console.log(res);
+      this.output = JSON.stringify(res, null, 2);
+    })
   }
 
 }
@@ -65,3 +82,10 @@ export class RunnerComponent implements OnInit {
 //curl -H "Content-Type: application/json; charset=UTF-8" -X POST -d '{"clientId": "YourClientId","clientSecret":"YourClientSecret","script":"","language":"php","versionIndex":"0"}' https://api.jdoodle.com/v1/execute
 
 //echo<?php echo \"Weeeeeeeee\"; ?>
+//https://api.factmaven.com/xml-to-json?xml=https://example.com/feed.xml
+//https://www.w3schools.com/xml/note.xml
+
+
+
+
+// <item contentType="tv_episode" contentId="df9c946a-e891-11ea-adc1-0242ac120002"><pubDate>2020-08-27T11:39:57-05:00</pubDate><title locale="en-US">Episode Title</title><description locale="en-US">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</description><rating systemCode="us-tv">TV-14</rating><artwork url="https://example.com/image.jpg" type="tile_artwork" locales="en-US" /></item>

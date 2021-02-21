@@ -1,17 +1,17 @@
 <div class="container-fluid">
-
+  <h1 class="my-2 display-2">Convert Xml to JSON</h1>
   <div class="row">
 
       <div class="col-md-5">
         <div class="form-group">
-              <label for="code">Paste your code here</label>
-              <textarea rows="15" cols="7" class="form-control" [(ngModel)]="codeRequest.script" name="code" id="code" placeholder="Paste your code snippet here..." required></textarea>
+              <label for="code"><strong>Paste your Xml here or paste  link to an Xml file </strong></label>
+              <textarea rows="15" cols="7" class="form-control" [(ngModel)]="code" name="code" id="code" placeholder="Paste your code snippet here..." required></textarea>
         </div>
 
       </div>
 
       <div class="col-md-1">
-      <button class="btn btn-success mt-2" (click)="runCode()">Run</button>
+      <button class="btn btn-success mt-2" (click)="convertXmlToJson()">Run</button>
         <div class="form-group mt-3">
         <label for="language">Select Language</label>
           <select name="language" [(ngModel)]="codeRequest.language" class="form-control">select
@@ -23,7 +23,7 @@
       <div class="col-md-5 ml-0">
           <div class="form-group">
               <label for="code">Result</label>
-              <textarea rows="15" cols="7" class="form-control" name="code" id="code"></textarea>
+              <pre><textarea rows="15" cols="7" class="form-control" [(ngModel)]="output" value="{{ output }}" name="code" id="code"></textarea></pre>
         </div>
       </div>
 
