@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <h1 class="my-2 display-2">Online Compiler - Run any code online </h1>
+  <div class="row">
+
+      <div class="col-md-5">
+        <div class="form-group">
+              <label for="code"><strong>Paste your code snippet here  </strong></label>
+              <textarea rows="15" cols="7" class="form-control" [(ngModel)]="codeRequest.script" name="code" id="code" placeholder='public class Welcome{
+
+public static void main(String[]args){
+System.out.println("Welcome to Java programming");
+
+for(int i=1; i<6; i++){
+System.out.println("Welcome to Java programming " + i);
+}
+}' required></textarea>
+        </div>
+
+      </div>
+
+      <div class="col-md-1">
+      <button class="btn btn-success mt-2" (click)="runCode()">Run</button>
+        <div class="form-group mt-3">
+        <label for="language">Select Language</label>
+          <select name="language" [(ngModel)]="codeRequest.language" class="form-control col-md-12">
+          <option selected disabled value="">Language</option>
+            <option *ngFor="let language of languages" value="{{ language }}">{{ language }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-md-5 ml-0">
+          <div class="form-group">
+              <label for="code">Result</label>
+              <pre><textarea rows="15" cols="7" class="form-control" [(ngModel)]="output" value="{{ output }}" name="code" id="code"></textarea></pre>
+        </div>
+      </div>
+
+  </div>
+</div>

@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/layouts/header/header.component';
 import { RunnerComponent } from './components/runner/runner.component';
 import { FooterComponent } from './components/layouts/footer/footer.component';
 import { TypescriptToJavaComponent } from './components/typescript-to-java/typescript-to-java.component';
+import { CodeRunnerComponent } from './components/code-runner/code-runner.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TypescriptToJavaComponent } from './components/typescript-to-java/types
     HeaderComponent,
     RunnerComponent,
     FooterComponent,
-    TypescriptToJavaComponent
+    TypescriptToJavaComponent,
+    CodeRunnerComponent
   ],
   imports: [
     BrowserModule,
