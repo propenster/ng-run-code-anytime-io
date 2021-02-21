@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <h1 class="my-2 display-2">Convert TypeScript Classes to POJO's</h1>
+  <div class="row">
+
+      <div class="col-md-5">
+        <div class="form-group">
+              <label for="code"><strong>Paste your TypeScript Class here  </strong></label>
+              <textarea rows="15" cols="7" class="form-control" [(ngModel)]="code" name="code" id="code" placeholder="export class model {
+       welcome : string;
+       name : string;
+       occupation : number;
+       dateOfRegistration : Date;
+       welcome : string;
+       name : string;
+       occupation : number;
+       dateofbirth : Date;
+       welcome : string;
+       name : string;
+       occupation : number;
+       isSuccessful : boolean;
+       }" required></textarea>
+        </div>
+
+      </div>
+
+      <div class="col-md-1">
+        <button class="btn btn-success mt-2" (click)="convertTypescriptToJava()">Run</button>
+
+      </div>
+
+      <div class="col-md-5 ml-0">
+          <div class="form-group">
+              <label for="code">Result</label>
+              <pre><textarea rows="15" cols="7" class="form-control" [(ngModel)]="output" value="{{ output }}" name="code" id="code"></textarea></pre>
+        </div>
+      </div>
+
+  </div>
+</div>

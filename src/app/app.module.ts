@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/layouts/header/header.component';
 import { RunnerComponent } from './components/runner/runner.component';
 import { FooterComponent } from './components/layouts/footer/footer.component';
+import { TypescriptToJavaComponent } from './components/typescript-to-java/typescript-to-java.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     RunnerComponent,
-    FooterComponent
+    FooterComponent,
+    TypescriptToJavaComponent
   ],
   imports: [
     BrowserModule,
